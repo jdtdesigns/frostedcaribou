@@ -59,6 +59,9 @@ var app = (function() {
     $('.stream-alert').find('.fa').on('click', closeStreamAlert);
     $('.main-nav').find('a').on('click', showModal);
     $('.about-modal, .contact-modal').find('.fa').on('click', closeModal);
+
+    var date = new Date();
+    $('#date').text(date.getFullYear());
   };
   
   return { init: init }
