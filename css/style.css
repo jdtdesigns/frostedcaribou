@@ -145,6 +145,7 @@ button {
   position: absolute;
   z-index: 101;
   background: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .05);
 }
 
 .stream-alert:before {
