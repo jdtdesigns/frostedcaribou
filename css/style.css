@@ -634,6 +634,11 @@ button {
   font-size: 2em;
   color: #ff78b5;
   margin: 0 10px;
+  transition: opacity .3s;
+}
+
+.contact-modal .social-links .fa:hover {
+  opacity: .85;
 }
 
 footer {
