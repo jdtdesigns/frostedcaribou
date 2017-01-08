@@ -24,7 +24,8 @@ var app = (function() {
   };
   
   var checkStreamStatus = function() {
-    var url = 'https://wind-bow.gomix.me/twitch-api/streams/frostedcaribou';
+    var id = '?client_id=7l3od9sx1rsri9b30l2p9ddxibl0bk0', 
+        url = 'https://api.twitch.tv/kraken/streams/frostedcaribou' + id;
     
     $.getJSON(url, function(data) {
         if ( data.stream ) $('.stream-alert').addClass('show');
