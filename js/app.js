@@ -38,7 +38,7 @@ var app = (function() {
   
   var showModal = function() {
     var link = $(this).attr('href');
-    console.log(link);
+
     if ( link == '#about' ) {
       $('.about-modal').addClass('show');
     } else $('.contact-modal').addClass('show');
@@ -46,6 +46,15 @@ var app = (function() {
   
   var closeModal = function() {
     $('.about-modal, .contact-modal').removeClass('show');
+  };
+
+  var validateForm = function(e) {
+    
+    var name = $('form input[name="name"]').val(),
+        email = $('form input[name="_replyto"]').val(),
+        message = $('form textarea').val();
+
+    if ( !name || !email || !message ) e.preventDefault();
   };
   
   var randomNum = function() {
@@ -59,6 +68,7 @@ var app = (function() {
     $('.stream-alert').find('.fa').on('click', closeStreamAlert);
     $('.main-nav').find('a').on('click', showModal);
     $('.about-modal, .contact-modal').find('.fa').on('click', closeModal);
+    $('form input[type="submit"]').on('click', validateForm);
 
     var date = new Date();
     $('#date').text(date.getFullYear());
