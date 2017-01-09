@@ -36,7 +36,9 @@ var app = (function() {
     $('.stream-alert').removeClass('show');
   };
   
-  var showModal = function() {
+  var showModal = function(e) {
+    e.stopPropagation();
+
     var link = $(this).attr('href');
 
     if ( link == '#about' ) {
@@ -44,7 +46,7 @@ var app = (function() {
     } else $('.contact-modal').addClass('show');
   };
   
-  var closeModal = function() {
+  var closeModals = function() {
     $('.about-modal, .contact-modal').removeClass('show');
   };
 
@@ -63,7 +65,10 @@ var app = (function() {
     $('.stream-alert').find('.fa').on('click', closeStreamAlert);
     $('.support-btn').find('.fa-times-circle').on('click', closeSupportButton);
     $('.main-nav').find('a').on('click', showModal);
-    $('.about-modal, .contact-modal').find('.fa').on('click', closeModal);
+    $('.about-modal, .contact-modal').find('.fa').on('click', closeModals);
+
+    $('.about-modal, .contact-modal').on('click', function(e) { e.stopPropagation(); });
+    $('body').on('click', closeModals);
 
     var date = new Date();
     $('#date').text(date.getFullYear());
