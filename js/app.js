@@ -51,15 +51,6 @@ var app = (function() {
   var closeSupportButton = function() {
     $('.support-btn').removeClass('show');
   };
-
-  var validateForm = function(e) {
-    
-    var name = $('form input[name="name"]').val(),
-        email = $('form input[name="_replyto"]').val(),
-        message = $('form textarea').val();
-
-    if ( !name || !email || !message ) e.preventDefault();
-  };
   
   var randomNum = function() {
     return Math.floor(Math.random() * 95) + 1;
@@ -73,7 +64,6 @@ var app = (function() {
     $('.support-btn').find('.fa-times-circle').on('click', closeSupportButton);
     $('.main-nav').find('a').on('click', showModal);
     $('.about-modal, .contact-modal').find('.fa').on('click', closeModal);
-    $('form input[type="submit"]').on('click', validateForm);
 
     var date = new Date();
     $('#date').text(date.getFullYear());
