@@ -478,9 +478,13 @@ button {
 .main-nav a:after, .main-nav a:before {
   content: '';
   position: absolute;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, .075);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .075);
   transition: transform .3s;
   backface-visibility: hidden !important;
+}
+
+.main-nav a:first-child:after {
+  box-shadow: none;
 }
 
 .main-nav a:hover:after, .main-nav a:hover:before {
