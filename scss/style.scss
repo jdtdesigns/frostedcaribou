@@ -167,9 +167,14 @@ button {
     left: 100px;
     top: -23px;
   }
-  &:hover:before, &:hover:after, &:hover .fa-times-circle:after {
+  &:hover:before, &:hover:after {
     transform: scale(1.05);
   }
+
+  &:hover .fa-times-circle:after {
+    transform: scale(1.2);
+  }
+
   &:hover a {
     background: lighten(#ff78b5, 3%);
   }
