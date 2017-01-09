@@ -48,6 +48,10 @@ var app = (function() {
     $('.about-modal, .contact-modal').removeClass('show');
   };
 
+  var closeSupportButton = function() {
+    $('.support-btn').removeClass('show');
+  };
+
   var validateForm = function(e) {
     
     var name = $('form input[name="name"]').val(),
@@ -66,6 +70,7 @@ var app = (function() {
     checkStreamStatus();
     
     $('.stream-alert').find('.fa').on('click', closeStreamAlert);
+    $('.support-btn').find('.fa-times-circle').on('click', closeSupportButton);
     $('.main-nav').find('a').on('click', showModal);
     $('.about-modal, .contact-modal').find('.fa').on('click', closeModal);
     $('form input[type="submit"]').on('click', validateForm);
@@ -74,7 +79,7 @@ var app = (function() {
     $('#date').text(date.getFullYear());
   };
   
-  return { init: init }
+  return { init: init };
 })();
 
 app.init();
