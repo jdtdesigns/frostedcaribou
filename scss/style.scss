@@ -248,12 +248,12 @@ button {
   font-family: 'Neucha', sans-serif;
   text-align: center;
   transform: translateX(110%);
-  transition: transform .7s;
   user-select: none;
 }
 
 .stream-alert.show {
   transform: translateX(0);
+  transition: transform .7s;
 }
 
 .stream-alert:after, .stream-alert:before {
